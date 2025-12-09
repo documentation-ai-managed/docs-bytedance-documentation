@@ -1,0 +1,146 @@
+---
+title: Changelog
+description: History of updates and releases for ByteDance platforms, highlighting new features and improvements.
+---
+
+## Overview
+
+Stay informed about the latest enhancements across ByteDance platforms, including TikTok, CapCut, and content creation tools. You access new features, performance improvements, and bug fixes here. Review recent releases to integrate updates into your applications and workflows.
+
+<Callout kind="info">
+  Subscribe to our RSS feed or GitHub notifications to receive changelog updates automatically.
+</Callout>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v2.5.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration in CapCut for multi-user editing sessions.
+- Introduced AI-powered content recommendations in TikTok Creator Studio.
+
+## Improvements
+
+- Enhanced video export speeds by 40% with optimized H.265 encoding.
+- Improved search accuracy for trending audio libraries.
+
+## Bug Fixes
+
+- Fixed intermittent crashes during long-form video uploads.
+- Resolved authentication issues with third-party OAuth integrations.
+
+</Update>
+
+<Update label="2024-09-20" description="v2.4.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Launched cross-platform sync for drafts between mobile and desktop apps.
+- Added customizable templates for ByteDance Business API responses.
+
+## Bug Fixes
+
+- Patched security vulnerability in token refresh endpoints (CVE-2024-5678).
+- Corrected layout shifts in responsive web dashboards.
+
+## Improvements
+
+- Reduced API latency for content moderation calls by 25%.
+
+</Update>
+
+<Update label="2024-08-10" description="v2.3.0" tags={["breaking", "feature"]}>
+
+## Breaking Changes
+
+- Deprecated legacy v1 endpoints; migrate to v2 for all video upload requests.
+
+## New Features
+
+- Integrated generative AI tools for automatic subtitle generation.
+- Added analytics dashboard with real-time viewer engagement metrics.
+
+## Improvements
+
+- Upgraded SDK to support Node.js 20 and Python 3.12.
+
+</Update>
+
+## Stay Updated
+
+Use these methods to track future releases and integrate changes seamlessly.
+
+<Columns cols={3}>
+  <Card title="GitHub Releases" icon="github" href="https://github.com/bytedance/docs/releases" target="_blank">
+    Follow the repository for automated notifications on new tags.
+  </Card>
+  <Card title="API Diffs" icon="code" href="/docs/api-changes">
+    Compare endpoint changes before upgrading your integration.
+  </Card>
+  <Card title="Newsletter" icon="mail" href="/subscribe">
+    Get monthly summaries delivered to your inbox.
+  </Card>
+</Columns>
+
+## Upgrade Your Integration
+
+Follow these steps to update your ByteDance SDK.
+
+<Steps>
+  <Step title="Check Compatibility" icon="check-circle">
+    Review the migration guide for your platform.
+  </Step>
+  <Step title="Update Package" icon="download">
+    <Tabs>
+      <Tab title="npm" icon="package">
+        ```bash
+        npm install @bytedance/sdk@latest
+        ```
+      </Tab>
+      <Tab title="pip" icon="python">
+        ```bash
+        pip install bytedance-sdk==2.5.0
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Test Changes" icon="play">
+    Run your test suite against the new endpoints.
+  </Step>
+</Steps>
+
+## SDK Example: Fetch Latest Changelog
+
+Incorporate changelog checks into your app.
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  import { ByteDanceSDK } from '@bytedance/sdk';
+
+  const sdk = new ByteDanceSDK({ apiKey: 'your-api-key' });
+  const changelog = await sdk.changelog.getLatest({ version: '2.5.0' });
+  console.log(changelog.entries);
+  ```
+  ```python
+  from bytedance_sdk import ByteDanceSDK
+
+  sdk = ByteDanceSDK(api_key='your-api-key')
+  changelog = sdk.changelog.get_latest(version='2.5.0')
+  print(changelog.entries)
+  ```
+</CodeGroup>
+
+<Expandable title="Migration Guide for Breaking Changes" default-open="false">
+
+For v2.3.0, update your upload calls:
+
+```javascript
+// Old
+await sdk.uploadVideo({ url: 'https://example.com/video.mp4' });
+
+// New
+await sdk.v2.uploadVideo({ sourceUrl: 'https://example.com/video.mp4' });
+```
+
+</Expandable>

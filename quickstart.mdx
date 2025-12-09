@@ -1,0 +1,92 @@
+---
+title: Getting Started with ByteDance Platforms
+description: A step-by-step guide to quickly set up and begin exploring ByteDance's content platforms as a user or creator.
+---
+
+## Overview
+
+ByteDance powers popular platforms like TikTok, CapCut, and Douyin, enabling you to create, share, and discover content worldwide. Follow these steps to get started quickly, whether you want to browse videos, edit clips, or upload your own creations.
+
+<Columns cols={3}>
+  <Card title="TikTok" icon="play-circle" href="https://www.tiktok.com" target="_blank">
+    Short-form video discovery and creation.
+  </Card>
+  <Card title="CapCut" icon="video" href="https://www.capcut.com" target="_blank">
+    Professional video editing tools.
+  </Card>
+  <Card title="Douyin" icon="smartphone" href="https://www.douyin.com" target="_blank">
+    China's leading short-video app.
+  </Card>
+</Columns>
+
+## Create Your Account
+
+Set up your account in minutes to access personalized feeds and creator tools.
+
+<Steps>
+  <Step title="Download the App" icon="download">
+    Install TikTok or CapCut from the App Store (iOS) or Google Play (Android).
+  </Step>
+  <Step title="Sign Up" icon="user-plus">
+    Open the app and tap **Profile** > **Sign up**. Use your email, phone, or social login like Google or Apple.
+  </Step>
+  <Step title="Verify" icon="check-circle">
+    Enter the verification code sent to your email or phone. Complete your profile with a username and photo.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Use a strong password and enable two-factor authentication for security.
+</Callout>
+
+## Log In and Navigate
+
+Access your account across platforms with seamless navigation.
+
+<Tabs>
+  <Tab title="Mobile App" icon="smartphone">
+    Launch the app, tap **Profile** in the bottom right, then **Log in**. Swipe through **For You**, **Following**, **Discover**, and **Create** tabs.
+  </Tab>
+  <Tab title="Web Browser" icon="globe">
+    Visit tiktok.com, click **Log in** in the top right. Use the same credentials. Navigate via the sidebar for home feed, search, and inbox.
+  </Tab>
+</Tabs>
+
+## Interact with Content
+
+Start engaging right away as a user or creator.
+
+<Steps>
+  <Step title="Browse and Like" icon="heart">
+    Scroll the **For You** page. Tap the heart to like, comment icon to add feedback, or share arrow to send to friends.
+  </Step>
+  <Step title="Create First Video" icon="plus">
+    Tap the **+** button. Record or upload a clip, add effects via CapCut integration, then post with captions and hashtags like `#ByteDance`.
+  </Step>
+  <Step title="Follow Creators" icon="users">
+    Search for trending topics, follow accounts, and explore personalized recommendations.
+  </Step>
+</Steps>
+
+For creators embedding videos on websites, use this snippet:
+
+<CodeGroup tabs="HTML,React">
+```html
+<iframe src="https://www.tiktok.com/embed/v2/VIDEO_ID" width="325" height="580" frameborder="0"></iframe>
+```
+```jsx
+import TikTokEmbed from 'react-tiktok';
+
+<TikTokEmbed videoId="VIDEO_ID" />
+```
+</CodeGroup>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+- **Login fails?** Clear cache or reset password via email.
+- **No content?** Update the app and grant location permissions.
+- **Upload errors?** Check file size (`<100MB`) and internet connection.
+</Expandable>
+
+<Callout kind="success">
+  You're now ready to explore billions of creative videos. Dive in and start creating!
+</Callout>

@@ -1,0 +1,178 @@
+---
+title: Frequently Asked Questions
+description: Common queries and solutions related to using ByteDance platforms, addressing user concerns and best practices.
+---
+
+## Overview
+
+ByteDance platforms like TikTok and CapCut empower you to create, share, and discover content globally. This FAQ covers account management, content policies, and access troubleshooting. Expand the sections below for detailed guidance.
+
+<Columns cols={2}>
+  <Card title="Account Help" icon="user" href="#account">
+    Manage your profile and security settings.
+  </Card>
+  <Card title="Content Rules" icon="shield" href="#policies">
+    Understand guidelines to stay compliant.
+  </Card>
+  <Card title="Fix Access Issues" icon="alert-triangle" href="#troubleshooting">
+    Resolve login and app problems quickly.
+  </Card>
+  <Card title="Developer Tools" icon="code" href="#api">
+    Integrate with ByteDance APIs.
+  </Card>
+</Columns>
+
+<ExpandableGroup>
+
+<Expandable title="How do I recover a forgotten password?" default-open="true">
+
+Follow these steps to reset your password securely.
+
+<Steps>
+  <Step title="Open Login Screen" icon="smartphone">
+    Launch the TikTok app or visit `tiktok.com/login`.
+  </Step>
+  <Step title="Select Forgot Password" icon="key">
+    Tap "Forgot password?" and enter your email or phone number.
+  </Step>
+  <Step title="Verify Identity" icon="check-circle">
+    Check your email or SMS for a verification code.
+  </Step>
+  <Step title="Set New Password" icon="lock">
+    Enter a strong password (at least 8 characters, mix of letters and numbers).
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable two-factor authentication after resetting to enhance security.
+</Callout>
+
+</Expandable>
+
+<Expandable title="What are the key content policies I must follow?">
+
+ByteDance enforces strict rules to maintain a safe community.
+
+- No hate speech, violence, or harassment.
+- Respect intellectual property; do not use copyrighted material without permission.
+- Avoid misinformation or spam.
+
+<Callout kind="danger">
+  Violations lead to content removal or account suspension. Review full policies at `platform.com/guidelines`.
+</Callout>
+
+For creators, tag sensitive content appropriately.
+
+</Expandable>
+
+<Expandable title="Why can't I access the app, and how do I fix it?">
+
+Common issues include network problems or cache buildup. Select your platform for tailored fixes.
+
+<Tabs>
+  <Tab title="Android" icon="android">
+    Clear app cache and data:
+
+    ````bash
+    Settings > Apps > TikTok > Storage > Clear Cache
+    ````
+
+    Restart your device and check for updates in Google Play.
+  </Tab>
+  <Tab title="iOS" icon="apple">
+    Offload the app:
+
+    ````bash
+    Settings > General > iPhone Storage > TikTok > Offload App
+    ````
+
+    Reinstall from App Store and sign in again.
+  </Tab>
+  <Tab title="Web" icon="globe">
+    Clear browser cache:
+
+    ````javascript
+    // In Chrome DevTools (F12)
+    Application > Storage > Clear site data
+    ````
+
+    Try incognito mode or a different browser.
+  </Tab>
+</Tabs>
+
+If issues persist, verify your internet connection exceeds `>5Mbps`.
+
+</Expandable>
+
+<Expandable title="How do I delete my account permanently?">
+
+Permanently deleting removes all data. Proceed carefully.
+
+<Steps>
+  <Step title="Go to Settings" icon="settings">
+    Open profile > Settings and privacy > Account > Deactivate or delete.
+  </Step>
+  <Step title="Select Delete" icon="trash-2">
+    Choose "Permanently delete account" and follow prompts.
+  </Step>
+  <Step title="Confirm" icon="alert-triangle">
+    Enter password and submit. Account deactivates after 30 days.
+  </Step>
+</Steps>
+
+<Callout kind="alert">
+  Deletion is irreversible. Download your data first via Settings > Account > Download your data.
+</Callout>
+
+</Expandable>
+
+<Expandable title="How do I integrate with TikTok API for developers?">
+
+Use the TikTok Business API for analytics and content posting.
+
+<CodeGroup tabs="JavaScript,Python">
+  ````javascript
+  const response = await fetch('https://open.tiktokapis.com/v2/research/video/query/', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${accessToken}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      query: 'music:country',
+      fields: ['id', 'create_time']
+    })
+  });
+  const data = await response.json();
+  console.log(data);
+  ````
+
+  ````python
+  import requests
+
+  headers = {
+      'Authorization': f'Bearer {access_token}',
+      'Content-Type': 'application/json'
+  }
+  data = {
+      'query': 'music:country',
+      'fields': ['id', 'create_time']
+  }
+  response = requests.post(
+      'https://open.tiktokapis.com/v2/research/video/query/',
+      headers=headers,
+      json=data
+  )
+  print(response.json())
+  ````
+</CodeGroup>
+
+Obtain `accessToken` from developer.tiktok.com.
+
+</Expandable>
+
+</ExpandableGroup>
+
+## Additional Resources
+
+Contact support via in-app help or visit `bytedance.com/support` for personalized assistance. Stay updated with platform changes through notifications.
